@@ -9,7 +9,7 @@ devices = list()
 # we can also use: devices = []
 
 # For loop to create large number of devices
-for index in range(100):
+for index in range(1, 10):
 
     # Create device dictionary
     device = dict()
@@ -21,7 +21,9 @@ for index in range(100):
         + choice(string.ascii_letters)
     )
 # RANDOM VENDORS FROM CHOICE OF CISCO, JUNIPER, ARISTA
+
     device["vendor"] = choice(["Cisco", "Juniper", "Arista"])
+
     if device["vendor"] == "Cisco":
         device["Os"] = choice(["ios", "ioxe", "ioxr", "nexus"])
         device["version"] = choice(["12.1(T).04", "14.07X.04", "8.12(S).010", "9.1(J).041"])
@@ -31,6 +33,7 @@ for index in range(100):
     elif device["vendor"] == "Arista":
         device["Os"] = "eOS"
         device["version"] = choice(["2.45", "2.55", "2.92.145", "3.01"])
+
     device["ip"] = "10.0.0" + str(index)
 
     # NICELY FORMATTED PRINT OF THIS ONE DEVICE:
@@ -54,7 +57,7 @@ print(tabulate(sorted(devices, key=itemgetter('vendor', 'Os', 'version')), heade
 # WE CAN ALSO PRINT THE TABLE IN THE FOLLOWING WAY:
 # sorted_devices = sorted(devices, key=itemgetter('vendor', 'Os', 'version'))
 # print(tabulate(sorted_devices, headers="keys"))
-
+ 
 
 
 
