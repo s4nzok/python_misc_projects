@@ -1,5 +1,5 @@
-from random import choice
 from tabulate import tabulate
+from random import choice
 import string
 
 def create_devices(num_devices = 1, num_subnets = 1):
@@ -47,14 +47,9 @@ def create_devices(num_devices = 1, num_subnets = 1):
             created_devices.append(device)
 
     return created_devices
-
 # ---MAIN PROGRAM----------------__________________
 
 if __name__ == '__main__':
 
     devices = create_devices(num_devices=4, num_subnets=5)
     print("\n", tabulate(devices, headers="keys"))
-
-
-
-
